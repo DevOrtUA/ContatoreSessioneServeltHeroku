@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.ServletOutputStream;
@@ -8,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 @WebServlet(
         name = "MyServlet",
@@ -16,10 +18,10 @@ import javax.servlet.http.HttpServletResponse;
 public class HelloServlet extends HttpServlet {
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp){
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         Integer x;
-        HttpSession session = request.getSession();
-        PrintWriter out = response.getWriter();
+        HttpSession session = req.getSession();
+        PrintWriter out = resp.getWriter();
 
         if(session.isNew()){
             x =new Integer(1);
