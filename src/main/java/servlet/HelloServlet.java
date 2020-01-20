@@ -33,8 +33,6 @@ public class HelloServlet extends HttpServlet {
 
         session.putValue("contatore", new Integer(x.intValue()+1));
 
-
-
         out.println("Access n: "+x);
     }
 
