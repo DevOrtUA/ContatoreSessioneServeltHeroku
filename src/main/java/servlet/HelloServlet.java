@@ -33,7 +33,8 @@ public class HelloServlet extends HttpServlet {
 
         session.putValue("contatore", new Integer(x.intValue()+1));
 
-        out.println("Access n: "+x);
+        out.println("<p>Access n°: "+x+ "</p>");
+        out.println("<a href='/'>link home</a>");
     }
 
 }
