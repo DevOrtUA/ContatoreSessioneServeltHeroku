@@ -13,7 +13,7 @@ import javax.servlet.http.HttpSession;
 
 @WebServlet(
         name = "MyServlet",
-        urlPatterns = {"/hello"}
+        urlPatterns = {"/contatore"}
 )
 public class HelloServlet extends HttpServlet {
 
