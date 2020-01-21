@@ -24,13 +24,12 @@ public class HelloServlet extends HttpServlet {
         if(session.isNew()){
             x =new Integer(1);
             session.setAttribute("contatore", x);
+            out.println("<h2>!!!Benvenuto!!!</h2>");
+        }else{
+            x =(Integer) session.getAttribute("contatore");
 
+            session.setAttribute("contatore", new Integer(x.intValue() + 1));
         }
-
-        x =(Integer) session.getAttribute("contatore");
-
-        session.setAttribute("contatore", new Integer(x.intValue() + 1));
-
         out.println("<p>Access n°: "+x+ "</p>");
         out.println("<a href='/'>link home</a>");
     }
